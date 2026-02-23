@@ -6,6 +6,18 @@
     <title>Sentinel-X | Free Cloud Forensic Audit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        .blur-text {
+            filter: blur(5px);
+            user-select: none;
+            pointer-events: none;
+        }
+        .neon-border {
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+        }
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+        }
         .glow { text-shadow: 0 0 10px rgba(0,255,65,0.5); }
         .bg-ghost { background: #050505; }
     </style>
@@ -20,6 +32,58 @@
         <div class="relative inline-block border border-gray-800 rounded-lg overflow-hidden shadow-2xl bg-[#0f0f0f] p-2">
             <img src="dashboard-preview.png" alt="Sentinel-X Dashboard" class="rounded border border-gray-800">
             <div class="absolute top-4 right-4 bg-green-500 text-black text-[10px] font-bold px-2 py-1 rounded">LIVE SCAN PREVIEW</div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto py-12 px-6">
+        <div class="bg-[#0f0f0f] border border-gray-800 rounded-lg overflow-hidden shadow-2xl neon-border">
+            <div class="bg-gray-900 px-4 py-2 text-[10px] flex justify-between border-b border-gray-800 tracking-tighter">
+                <span class="text-green-500 font-bold">ANALYSIS_RUN: SUCCESS (58%_EFFICIENCY_DETECTED)</span>
+                <span class="text-gray-500 font-mono">AWS-GLOBAL-SCAN</span>
+            </div>
+            <div class="p-6 overflow-x-auto text-left">
+                <table class="w-full text-xs">
+                    <thead>
+                        <tr class="text-gray-600 border-b border-gray-800 text-left">
+                            <th class="pb-3 font-normal">RESOURCE_TYPE</th>
+                            <th class="pb-3 font-normal">RESOURCE_ID (ENCRYPTED)</th>
+                            <th class="pb-3 font-normal text-right">ANNUAL_WASTE</th>
+                        </tr>
+                    </thead>
+                    <tbody class="font-mono">
+                        <tr>
+                            <td class="py-4 text-red-500/80">EC2_INSTANCE_IDLE</td>
+                            <td class="py-4 blur-text">i-0a1b2c3d4e5f6g7h8</td>
+                            <td class="py-4 text-right text-white">$438.00</td>
+                        </tr>
+                        <tr class="border-t border-gray-900">
+                            <td class="py-4 text-red-500/80">EBS_VOLUME_ORPHAN</td>
+                            <td class="py-4 blur-text">vol-05f4e3d2c1b0a9z8y</td>
+                            <td class="py-4 text-right text-white">$124.21</td>
+                        </tr>
+                        <tr class="border-t border-gray-900">
+                            <td class="py-4 text-red-500/80">ELASTIC_IP_UNUSED</td>
+                            <td class="py-4 blur-text">eipalloc-0123456789</td>
+                            <td class="py-4 text-right text-white">$43.80</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="mt-8 p-8 bg-black/40 border-t border-gray-800 text-center rounded-b">
+                    <p class="text-white text-lg font-bold mb-2">Total Bleeding Detected: <span class="text-red-500">$606.01 / year</span></p>
+                    <p class="text-gray-500 text-xs mb-8">Identification keys are hidden for security. Purchase the Recovery Plan to reveal targets and execute remediation scripts.</p>
+                    
+                    <a href="https://buy.stripe.com/seu_link_aqui" class="inline-block bg-[#00ff41] text-black px-12 py-4 font-black rounded hover:bg-green-400 transition-all transform hover:scale-105 uppercase tracking-tighter">
+                        Generate Full Recovery Plan ($99 USD)
+                    </a>
+                    
+                    <div class="flex justify-center items-center gap-4 mt-6 opacity-30 grayscale">
+                        <span class="text-[10px] text-gray-400">STRIPE ATLAS VERIFIED</span>
+                        <span class="text-[10px] text-gray-400">C-CORP DELAWARE</span>
+                        <span class="text-[10px] text-gray-400">DEVSECOPS STANDARDS</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -44,8 +108,8 @@
                     Download One-Click Template
                 </a>
                 <a href="Sentinel-X_Protocol.pdf" target="_blank" class="border border-gray-700 hover:border-white px-8 py-4 font-bold rounded transition duration-300">
-    READ SECURITY PROTOCOL (PDF)
-</a>
+                    READ SECURITY PROTOCOL (PDF)
+                </a>
             </div>
             <p class="mt-6 text-xs text-gray-600 italic">"Security is not a product, it's a process." - The Ghost Node</p>
         </div>
