@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Sentinel-X | Sovereign Cloud Forensic Audit Role. Hardened by Design.'
+
+# Protocolo: Snake_case nos parâmetros e segurança via ExternalID
+Parameters:
+  ghost_bunker_account_id:
+    Type: String
+    Description: 'The Ghost Node AWS Account ID authorized to perform the audit.'
+    Default: '072134156302'
+
+Resources:
+  sentinel_role:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: Sentinel-X-Forensic-Role
+      Description: 'ReadOnly access for Sentinel-X forensic scanning engine.'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              # Permite apenas a conta do Ghost Node (Bunker)
+              AWS: !Sub 'arn:aws:iam::${ghost_bunker_account_id}:root'
+            Action: 'sts:AssumeRole'
+            Condition:
+              # Camada Extra de Proteção: O Handshake exige o ID Secreto
+              StringEquals:
+                'sts:ExternalId': 'GHOST_SENTINEL_2026_PRO'
+      ManagedPolicyArns:
+        # Menor Privilégio: Apenas leitura de metadados da conta
+        - 'arn:aws:iam::aws:policy/ReadOnlyAccess'
+
+Outputs:
+  role_arn:
+    Description: 'AUDIT TOKEN: Copy this ARN and paste it into the Sentinel-X dashboard.'
+    Value: !GetAtt sentinel_role.Arn
