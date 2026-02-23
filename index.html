@@ -28,59 +28,67 @@
         <h1 class="text-red-600 text-sm tracking-widest uppercase mb-4 font-bold">// Critical Infrastructure Alert</h1>
         <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Stop your AWS <span class="text-red-500 underline">Budget Bleeding</span>.</h2>
         <p class="text-lg text-gray-500 mb-10">Get a forensic report of your zombie resources in 5 minutes. No passwords. Read-only access. Hardened by design.</p>
-        
-        <div class="relative inline-block border border-gray-800 rounded-lg overflow-hidden shadow-2xl bg-[#0f0f0f] p-2">
-            <img src="dashboard-preview.png" alt="Sentinel-X Dashboard" class="rounded border border-gray-800">
-            <div class="absolute top-4 right-4 bg-green-500 text-black text-[10px] font-bold px-2 py-1 rounded">LIVE SCAN PREVIEW</div>
-        </div>
     </section>
 
     <section class="max-w-4xl mx-auto py-12 px-6">
         <div class="bg-[#0f0f0f] border border-gray-800 rounded-lg overflow-hidden shadow-2xl neon-border">
             <div class="bg-gray-900 px-4 py-2 text-[10px] flex justify-between border-b border-gray-800 tracking-tighter">
-                <span class="text-green-500 font-bold">ANALYSIS_RUN: SUCCESS (58%_EFFICIENCY_DETECTED)</span>
-                <span class="text-gray-500 font-mono">AWS-GLOBAL-SCAN</span>
+                <span class="text-green-500 font-bold tracking-widest uppercase">Live_Forensic_Stream // Target_Detected</span>
+                <span class="text-gray-500 font-mono uppercase">Audit Mode: Active</span>
             </div>
-            <div class="p-6 overflow-x-auto text-left">
-                <table class="w-full text-xs">
-                    <thead>
-                        <tr class="text-gray-600 border-b border-gray-800 text-left">
-                            <th class="pb-3 font-normal">RESOURCE_TYPE</th>
-                            <th class="pb-3 font-normal">RESOURCE_ID (ENCRYPTED)</th>
-                            <th class="pb-3 font-normal text-right">ANNUAL_WASTE</th>
-                        </tr>
-                    </thead>
-                    <tbody class="font-mono">
-                        <tr>
-                            <td class="py-4 text-red-500/80">EC2_INSTANCE_IDLE</td>
-                            <td class="py-4 blur-text">i-0a1b2c3d4e5f6g7h8</td>
-                            <td class="py-4 text-right text-white">$438.00</td>
-                        </tr>
-                        <tr class="border-t border-gray-900">
-                            <td class="py-4 text-red-500/80">EBS_VOLUME_ORPHAN</td>
-                            <td class="py-4 blur-text">vol-05f4e3d2c1b0a9z8y</td>
-                            <td class="py-4 text-right text-white">$124.21</td>
-                        </tr>
-                        <tr class="border-t border-gray-900">
-                            <td class="py-4 text-red-500/80">ELASTIC_IP_UNUSED</td>
-                            <td class="py-4 blur-text">eipalloc-0123456789</td>
-                            <td class="py-4 text-right text-white">$43.80</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="p-8">
+                <div class="mb-10 border-b border-gray-900 pb-8 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
+                    <div>
+                        <span class="text-gray-500 text-[10px] uppercase tracking-widest">Annualized Leakage detected</span>
+                        <div class="text-5xl font-black text-red-600 glow">$802.41</div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-gray-500 text-[10px] uppercase tracking-widest font-bold">Zombies Found</span>
+                        <div class="text-4xl font-black text-white">04</div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left">
+                        <thead>
+                            <tr class="text-gray-600 border-b border-gray-800 uppercase">
+                                <th class="pb-3 font-normal">Resource_Type</th>
+                                <th class="pb-3 font-normal">Resource_ID (Encrypted)</th>
+                                <th class="pb-3 font-normal text-right">Potential_Savings</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-mono">
+                            <tr>
+                                <td class="py-4 text-red-500/80 uppercase">EC2_Instance_Idle</td>
+                                <td class="py-4 blur-text">i-0a1b2c3d4e5f6g7h8</td>
+                                <td class="py-4 text-right text-white">$438.00</td>
+                            </tr>
+                            <tr class="border-t border-gray-900">
+                                <td class="py-4 text-red-500/80 uppercase">EBS_Volume_Orphan</td>
+                                <td class="py-4 blur-text">vol-05f4e3d2c1b0a9z8y</td>
+                                <td class="py-4 text-right text-white">$124.21</td>
+                            </tr>
+                            <tr class="border-t border-gray-900">
+                                <td class="py-4 text-red-500/80 uppercase">Elastic_IP_Unused</td>
+                                <td class="py-4 blur-text">eipalloc-0123456789</td>
+                                <td class="py-4 text-right text-white">$43.80</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
-                <div class="mt-8 p-8 bg-black/40 border-t border-gray-800 text-center rounded-b">
-                    <p class="text-white text-lg font-bold mb-2">Total Bleeding Detected: <span class="text-red-500">$606.01 / year</span></p>
-                    <p class="text-gray-500 text-xs mb-8">Identification keys are hidden for security. Purchase the Recovery Plan to reveal targets and execute remediation scripts.</p>
+                <div class="mt-10 p-8 bg-black/40 border border-gray-800 text-center rounded">
+                    <p class="text-gray-400 text-sm mb-6 font-sans">Identification keys and remediation scripts are hidden for security.</p>
                     
-                    <a href="https://buy.stripe.com/seu_link_aqui" class="inline-block bg-[#00ff41] text-black px-12 py-4 font-black rounded hover:bg-green-400 transition-all transform hover:scale-105 uppercase tracking-tighter">
-                        Generate Full Recovery Plan ($99 USD)
+                    <a href="https://buy.stripe.com/seu_link_aqui" class="inline-block bg-[#00ff41] text-black px-12 py-5 font-black rounded hover:bg-green-400 transition-all transform hover:scale-105 uppercase tracking-tighter">
+                        Generate Recovery Plan ($99 USD)
                     </a>
                     
-                    <div class="flex justify-center items-center gap-4 mt-6 opacity-30 grayscale">
-                        <span class="text-[10px] text-gray-400">STRIPE ATLAS VERIFIED</span>
-                        <span class="text-[10px] text-gray-400">C-CORP DELAWARE</span>
-                        <span class="text-[10px] text-gray-400">DEVSECOPS STANDARDS</span>
+                    <div class="flex justify-center items-center gap-6 mt-8 opacity-20 grayscale text-[9px] font-bold tracking-widest uppercase">
+                        <span>Stripe Atlas Verified</span>
+                        <span>C-Corp Delaware</span>
+                        <span>DevSecOps Standards</span>
                     </div>
                 </div>
             </div>
@@ -88,30 +96,30 @@
     </section>
 
     <section class="max-w-3xl mx-auto py-20 px-6">
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="grid md:grid-cols-2 gap-12 text-left">
             <div class="border-l-2 border-green-500 pl-6">
                 <h3 class="text-white font-bold mb-2">100% Read-Only</h3>
-                <p class="text-sm text-gray-500">We use AWS SecurityAudit policy. We can't delete, change, or move anything. We only see the waste.</p>
+                <p class="text-sm text-gray-500 font-sans">We use AWS SecurityAudit policy. We can't delete, change, or move anything. We only see the waste.</p>
             </div>
             <div class="border-l-2 border-red-500 pl-6">
                 <h3 class="text-white font-bold mb-2">Instant ROI</h3>
-                <p class="text-sm text-gray-500">Most accounts find 20-30% in orphan EBS and idle EC2 instances in the first run.</p>
+                <p class="text-sm text-gray-500 font-sans">Most accounts find 20-30% in orphan EBS and idle EC2 instances in the first run.</p>
             </div>
         </div>
     </section>
 
     <section class="bg-[#0a0a0a] py-20 border-t border-gray-900">
         <div class="max-w-2xl mx-auto text-center px-6">
-            <h2 class="text-2xl font-bold text-white mb-8">Ready for your Forensic Handshake?</h2>
+            <h2 class="text-2xl font-bold text-white mb-8 uppercase tracking-tighter">Forensic Handshake</h2>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="sentinel_read_only_access.yaml" download class="bg-white text-black px-8 py-4 font-bold rounded hover:bg-gray-200 transition">
-                    Download One-Click Template
+                <a href="sentinel_read_only_access.yaml" download class="bg-white text-black px-8 py-4 font-bold rounded hover:bg-gray-200 transition uppercase text-xs">
+                    One-Click Template
                 </a>
-                <a href="Sentinel-X_Protocol.pdf" target="_blank" class="border border-gray-700 hover:border-white px-8 py-4 font-bold rounded transition duration-300">
-                    READ SECURITY PROTOCOL (PDF)
+                <a href="Sentinel-X_Protocol.pdf" target="_blank" class="border border-gray-700 hover:border-white px-8 py-4 font-bold rounded transition duration-300 uppercase text-xs">
+                    Security Protocol (PDF)
                 </a>
             </div>
-            <p class="mt-6 text-xs text-gray-600 italic">"Security is not a product, it's a process." - The Ghost Node</p>
+            <p class="mt-8 text-[10px] text-gray-600 italic font-sans tracking-widest">"Security is not a product, it's a process." - The Ghost Node</p>
         </div>
     </section>
 
